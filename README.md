@@ -6,6 +6,9 @@
 * Using prototyping tool for providing a design
 * Frame work with Vue.js
 
+## Design Description
+ Colour choices - usage of black and white colours for a vintage look and combination of bright color for kids' profile.
+ Font - Playfair display, an elegant and clean serif font
 
 ## Tools Used
 * HTML5
