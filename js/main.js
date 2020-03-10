@@ -2,12 +2,29 @@
 import LoginComponent from "./components/LoginComponent.js"
 
 (() => {
-  let router = new VueRouter({
-    // set routes
-    routes: [
-      
-      { path: '/login', name: "login", component: LoginComponent },
+ const router = new VueRouter({
+    // mode: 'history', //delete#
+    routes:[
+      {path: '/', component: LoginComponent}
+
     ]
+      
+  
   });
+
+
+const vm = new Vue({
+    data: {
+
+    },
+
+    method: {
+
+    },
+
+    router
+
+
+}).$mount("#app");
 
 })();
