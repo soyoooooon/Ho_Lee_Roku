@@ -1,11 +1,13 @@
 // import the login component first (actually all components here, but we're starting with login)
 import LoginComponent from "./components/LoginComponent.js"
+import mainComponent from "./components/mainComponent.js";
 
 (() => {
  const router = new VueRouter({
     // mode: 'history', //delete#
     routes:[
-      {path: '/', component: LoginComponent}
+      {path: '/', component: LoginComponent},
+      {path: '/main', component: mainComponent}
 
     ]
       
@@ -15,16 +17,38 @@ import LoginComponent from "./components/LoginComponent.js"
 
 const vm = new Vue({
     data: {
+      logined: false,
+      administrator: false,
+      user: [],
+    },
+
+    methods: {
+      setLogin(status, data){
+        this.logined = status;
+        this.user = data;
+      },
+
+      logout() {
+        // push user back to login page
+        this.$router.push({ path: "/" });
+        this.logined = false;
+      }
 
     },
 
-    method: {
-
-    },
-
-    router
+    router: router
 
 
 }).$mount("#app");
+
+router.beforeEach((to, from, next) => {
+  //console.log('router guard fired!', to, from, vm.authenticated);
+
+  if (vm.logined == false) {
+    next("/");
+  } else {
+    next();
+  }
+});
 
 })();

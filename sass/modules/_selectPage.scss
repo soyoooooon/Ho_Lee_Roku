@@ -1,0 +1,40 @@
+#select-bg{
+    width: 100vw;
+    height: 100vh;
+    background-color: $dark;
+
+
+    .watching{
+        border-bottom: solid 1.5px $cream;
+        padding-top: 20px;
+        margin: 0 auto;
+        width: 80vw;
+        display: flex;
+        flex-direction:row;
+
+        h2{
+        font-family: $font;
+        font-size: 1.3em;
+        color: white;
+        margin-right: 23vw;
+        padding-top: 10px;
+        }
+
+   
+        img{
+            
+            width: 30px;
+            height: 30px;
+            margin: 7px;
+        }
+   
+    }
+}
+
+
+@media screen and 
+(min-width : 576px) and (max-width : 768px)  {
+
+
+    
+}
