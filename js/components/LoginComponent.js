@@ -42,12 +42,17 @@ export default{
                             if (typeof data != "object") { // means that we're not getting a user object back
                                 console.warn(data);
                                 // just for testing
-                                alert("authentication failed, please try again");
+                                alert("Are you sure? please try again");
                             } else {
 
-                                debugger;
+                                
                                 this.$emit("logined", true, data);
-                                this.$router.replace({ name: "users" });
+
+                                // debugger;
+                            
+                                this.$router.replace({ path: "/home" });
+                                // .catch((err)=>console.error(err));
+                                
                             }
                         })
                         .catch(function (error) {
@@ -63,4 +68,5 @@ export default{
         console.log('our app component rendered');
         
     }
+
 };

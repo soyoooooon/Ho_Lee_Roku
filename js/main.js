@@ -1,13 +1,13 @@
 // import the login component first (actually all components here, but we're starting with login)
-import LoginComponent from "./components/LoginComponent.js"
-import mainComponent from "./components/mainComponent.js";
+import LoginComponent from "./components/LoginComponent.js";
+import homeComponent from "./components/homeComponent.js";
 
 (() => {
  const router = new VueRouter({
     // mode: 'history', //delete#
     routes:[
       {path: '/', component: LoginComponent},
-      {path: '/main', component: mainComponent}
+      {path: '/home', component: homeComponent}
 
     ]
       
