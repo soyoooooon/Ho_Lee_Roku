@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     background-color: $dark;
+    z-index: 2;
 
     .watching{
         border-bottom: solid 1px $cream;

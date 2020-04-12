@@ -1,14 +1,18 @@
-
 export default {
     props: ['liveuser'],
 
     template: `
     <div class="getUser">
-        <div class="imageWrap" @click.prevent="userSelected()">
-            <img :src="'images/' + liveuser.avatar" >
+        <div class="imageWrap">
+            <img :src="'images/' + liveuser.avatar" @click.prevent="userSelected()">
         </div>
         <p>{{ liveuser.username }}</p>
-    </div>`,
+    </div>
+    `,
+
+    data: {
+        currentuser: ""
+    },
 
     created: function() {
         if (this.liveuser.avatar === null || this.liveuser.avatar === ""){
@@ -17,10 +21,9 @@ export default {
 
     },
 
-
     methods: {
         userSelected() {
-            debugger;
+            console.log(this.liveuser.username);
         }
     }
 
