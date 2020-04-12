@@ -2,20 +2,25 @@ import getUserComponent from './getUserComponent.js';
 
 
 export default{
-template: `<section id="select-bg">
-<div class="watching"><h2>Who's watching</h2>
-<span class="user-edit"><img src="images/user_edit.svg"></span>
-<span class="user-plus"><img src="images/user_plus.svg"></span>
-</div>
-<div><user v-for="(user , index) in userList" :liveuser="user" :key="index" ></user>
-</div>
+template: `
+<section id="select-bg">
+    <div class="watching">
+        <h2>Who's watching</h2>
+        <span class="user-edit">
+            <img src="images/user_edit.svg">
+            <img src="images/user_plus.svg">
+        </span>
+    </div>
+    <div class="userList">
+        <user v-for="(user , index) in userList" :liveuser="user" :key="index"></user>
+    </div>
 </section>`
 ,
+
 created: function () {
     this.fetchAllUsers();
-
-
 },
+
 data() {
 
 return{
@@ -34,7 +39,6 @@ methods: {
             this.userList = data;
         })
         .catch((err)=>console.error(err));
-
     }
 
 },

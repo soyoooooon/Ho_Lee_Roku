@@ -3,38 +3,97 @@
     height: 100vh;
     background-color: $dark;
 
-
     .watching{
-        border-bottom: solid 1.5px $cream;
-        padding-top: 20px;
+        border-bottom: solid 1px $cream;
+        padding: 40px 0 5px;
         margin: 0 auto;
         width: 80vw;
         display: flex;
-        flex-direction:row;
+        flex-direction: row;
+        justify-content: space-between;
 
         h2{
         font-family: $font;
-        font-size: 1.3em;
+        font-size: 1em;
         color: white;
-        margin-right: 23vw;
-        padding-top: 10px;
         }
 
-   
         img{
-            
-            width: 30px;
-            height: 30px;
-            margin: 7px;
+            width: 20px;
+            height: 20px;
         }
-   
+    }
+}
+
+.userList {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px 0 0;
+    justify-content: space-between;
+
+    .getUser {
+        width: 50%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .imageWrap {
+            height: 100px;
+            width: 100px;
+            overflow: hidden;
+            display: block;
+            text-align: center;
+            border-radius: 50px;
+
+            img {
+                height: 120%;
+                width: auto;
+            }
+        }
+
+        p {
+            color: $white;
+            padding-top: 5px;
+            font-size: 0.8em;
+            text-transform: capitalize;
+        }
     }
 }
 
 
 @media screen and 
-(min-width : 576px) and (max-width : 768px)  {
-
-
+(min-width: 576px) and (max-width: 768px) {
+    .userList {
+        padding: 80px 0 0;
     
+        .getUser {
+            width: 50%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            margin-bottom: 20px;
+    
+            .imageWrap {
+                height: 160px;
+                width: 160px;
+                overflow: hidden;
+                display: block;
+                text-align: center;
+                border-radius: 80px;
+    
+                img {
+                    height: 120%;
+                    width: auto;
+                }
+            }
+    
+            p {
+                color: $white;
+                padding-top: 5px;
+                font-size: 0.8em;
+                text-transform: capitalize;
+            }
+        }
+    }
 }

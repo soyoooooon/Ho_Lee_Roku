@@ -4,11 +4,15 @@ class Database
     // Note: specify your own database credentials
     private $host = "localhost";
 
+    // comment this part out later (I needed it temporarily)
+    private $port = "3308";
+
     private $db_name = "db_roku";
 
     private $username = "root";
 
-    private $password = "root";
+    // root for mac
+    private $password = "";
 
     private static $instance = null;
     public $conn;
@@ -16,6 +20,7 @@ class Database
     private function __construct(){
         $db_dsn = array(
             'host'    => $this->host,
+            'port'    => $this->port,
             'dbname'  => $this->db_name,
             'charset' => 'utf8',
         );
