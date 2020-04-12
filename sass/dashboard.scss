@@ -1,0 +1,11 @@
+@import 'modules/vars';
+@import 'modules/dashboardheader';
+@import 'modules/dashboardwelcome';
+@import 'modules/dashboardresults';
+
+main {
+    padding: 20px;
+    font-family: $font;
+    font-size: 16px;
+    background-color: $cream;
+}

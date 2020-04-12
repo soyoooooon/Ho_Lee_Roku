@@ -32,7 +32,6 @@
             <h2>Welcome user!<br>What would you like to watch today?</h2>
 
             <div id="filter">
-                <button></button>
                 <input type="text" id="browse">
                 <i class="fas fa-search"></i>
 

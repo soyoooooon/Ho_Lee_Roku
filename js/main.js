@@ -7,11 +7,9 @@ import homeComponent from "./components/homeComponent.js";
     // mode: 'history', //delete#
     routes:[
       {path: '/', component: LoginComponent},
-      {path: '/home', component: homeComponent}
-
+      {path: '/home', component: homeComponent},
     ]
       
-  
   });
 
 
