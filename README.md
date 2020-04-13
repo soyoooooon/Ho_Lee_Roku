@@ -23,7 +23,8 @@
 * Adobe Photoshop
 
 ## Google Document
-* [Google Doc](https://docs.google.com/document/d/17EWQWVDNswf-EGNF5NL3AXqPF4pXvoJWidB756JZ_Lg/edit?usp=sharing)
+* [Dev Doc](https://docs.google.com/document/d/17EWQWVDNswf-EGNF5NL3AXqPF4pXvoJWidB756JZ_Lg/edit?usp=sharing)
+* [Design Doc](https://docs.google.com/document/d/1PjrPWrOVxEbuCM5r5_tHPJv0xqfAqiiynGUGX9fE2IQ/edit?usp=sharing)
 
 ## Authors
 * Designer: Daffodil Ho
