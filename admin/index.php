@@ -1,12 +1,11 @@
 <?php
     require_once '../load.php';
-    
+
 
     if (isset($_GET['media'])) {
         $tbl = "tbl_" . trim($_GET["media"]);
 
     }
-
 
     if (isset($_GET['filter'])) {
         $args = array(
