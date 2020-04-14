@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 14, 2020 at 03:02 PM
+-- Generation Time: Apr 14, 2020 at 03:38 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -203,7 +203,7 @@ INSERT INTO `tbl_media` (`media_id`, `media_name`, `media_image`, `media_video`,
 (8, 'E.T.', '1980_et.jpg', 'AcrosstheMoon-et.mp4', 'movie'),
 (9, 'GoodFellas', '1990_goodfellas.jpg', 'Goodfellas-PaulPaulieCicero.mp4', 'movie'),
 (10, 'Home Alone', '1990_home.jpg', 'HomeAlone.mp4', 'movie'),
-(11, 'Leave It To Beaver', '1950_beaver.jpg', 'June Cleaver on womens changing roles in the 1960s.mp4', 'tv'),
+(11, 'Leave It To Beaver', '1950_beaver.jpg', 'beaver.mp4', 'tv'),
 (12, 'Ozzie and Harriet', '1950_ozzie.jpg', 'Ozzie.mp4', 'tv'),
 (13, 'Coronation Street', '1960_coronation.jpg', 'CoronationStreet-FirstScene.mp4', 'tv'),
 (14, 'The Flintstones', '1960_flintstones.jpg', 'Subway in the stone ageThe Flintstones.mp4', 'tv'),
@@ -244,25 +244,25 @@ CREATE TABLE `tbl_media_kid` (
 
 INSERT INTO `tbl_media_kid` (`media_kid_id`, `media_name`, `media_image`, `media_video`, `media_type`) VALUES
 (1, 'Peter Pan', '1950_peter.jpg', '1950_peterpan.mp4', 'movie'),
-(2, '101 Dalmations', '1960_dalmation.jpg', '101 Dalmatians Official Clip Home Again (1961) - Animation Movie HD.mp4', 'movie'),
-(3, 'The Aristocats', '1970_aristocat.jpg', 'The Aristocats Edgar sedates the cats HD.mp4', 'movie'),
-(4, 'Star Wars: The Empire Strikes Back', '1980_star.jpg', 'The Empire Strikes Back Bounty Hunter scene (Full).mp4', 'movie'),
-(5, 'E.T.', '1980_et.jpg', 'Across the Moon - E.T. The Extra-Terrestrial (710) Movie CLIP (1982)', 'movie'),
-(6, 'Home Alone', '1990_home.jpg', 'Home Alone (1990) Supermarket Scene (12).mp4', 'movie'),
-(7, 'Leave It To Beaver', '1950_beaver.jpg', 'June Cleaver on womens changing roles in the 1960s.mp4', 'tv'),
-(8, 'Ozzie and Harriet', '1950_ozzie.jpg', '(Clip 2) Ozzie & Harriet Rick & The Maid of Honor Rick Nelson Jimmy ', 'tv'),
-(9, 'Coronation Street', '1960_coronation.jpg', 'Coronation Street - First Scene (1960).mp4', 'tv'),
+(2, '101 Dalmations', '1960_dalmation.jpg', '101dalmations.mp4', 'movie'),
+(3, 'The Aristocats', '1970_aristocat.jpg', 'TheAristocats.mp4', 'movie'),
+(4, 'Star Wars: The Empire Strikes Back', '1980_star.jpg', 'starwars.mp4', 'movie'),
+(5, 'E.T.', '1980_et.jpg', 'AcrosstheMoon-et.mp4', 'movie'),
+(6, 'Home Alone', '1990_home.jpg', 'HomeAlone.mp4', 'movie'),
+(7, 'Leave It To Beaver', '1950_beaver.jpg', 'beaver.mp4', 'tv'),
+(8, 'Ozzie and Harriet', '1950_ozzie.jpg', 'Ozzie.mp4', 'tv'),
+(9, 'Coronation Street', '1960_coronation.jpg', 'CoronationStreet-FirstScene.mp4', 'tv'),
 (10, 'The Cosby Show', '1980_cosby.jpg', 'cosbyshow.mp4', 'tv'),
-(11, 'Seinfeld', '1990_seinfeld.jpg', 'Seinfeld Elaine\'s Out (Clip) TBS.mp4', 'tv'),
+(11, 'Seinfeld', '1990_seinfeld.jpg', 'Seinfeld.mp4', 'tv'),
 (12, 'The Simpsons', '1990_simpsons.jpg', 'simpsons.mp4', 'tv'),
 (13, 'All My Love', '1950_all.jpg', '1950_allmylove.mp4', 'music'),
 (14, 'Put Your Head On My Shoulder', '1950_paul.jpg', '1950_PaulAnka.mp4', 'music'),
 (15, 'Stand By Me', '1960_stand.jpg', 'Stand By Me.mp3', 'music'),
 (16, 'Close to You', '1970_close.jpg', 'Carpenters - Close to you.mp3', 'music'),
-(17, 'Let It Be', '1970_let.jpg', 'Let It Be (Remastered 2009).mp3', 'music'),
-(18, 'Call Me', '1980_call.jpg', 'Blondie - Call Me (Official Video).mp3', 'music'),
-(19, 'Eye of the Tiger', '1980_tiger.jpg', 'Survivor - Eye Of The Tiger (Official Music Video).mp3', 'music'),
-(20, 'U Can\'t Touch This', '1990_hammer.jpg', 'MC Hammer - U Can\'t Touch This (HQ).mp3', 'music');
+(17, 'Let It Be', '1970_let.jpg', 'Let-it-be.mp3', 'music'),
+(18, 'Call Me', '1980_call.jpg', 'Blondie-CallMe.mp3', 'music'),
+(19, 'Eye of the Tiger', '1980_tiger.jpg', 'Survivor.mp3', 'music'),
+(20, 'U Can\'t Touch This', '1990_hammer.jpg', 'MCHammer.mp3', 'music');
 
 -- --------------------------------------------------------
 

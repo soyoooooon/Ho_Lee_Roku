@@ -34,7 +34,7 @@ export default {
 
    <section class="lightbox" :class="{'show-movie' : showDetails }">
    <h4>{{mediaDetails.media_name}}</h4>
-    <h4>{{mediaDetails.media_video}}</h4>
+    
     <video autoplay :src="'media/' + mediaDetails.media_video" v-if="showDetails">></video>
     
    
@@ -104,7 +104,7 @@ export default {
     },
 
     loadMovie(lightbox){
-        
+         //DILLLLLLLLLLLLL sorry could you make a closelightbox....???
            this.showDetails = true;
             this.mediaDetails = lightbox;
             

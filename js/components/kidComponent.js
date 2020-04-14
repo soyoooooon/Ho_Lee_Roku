@@ -1,5 +1,5 @@
 export default {
-   props: ['currentuser'],
+   props: ['currentuser'], //curentuser is not working...
  
     template:`<section id="select-bg">
     <header>
@@ -26,14 +26,14 @@ export default {
             <article id="all-media">
             <div class="each-media">
    
-      <img v-for="image in allFetchMedia" :src="'images/' + image.media_image">
+      <img v-for="image in allFetchMedia" :src="'images/' + image.media_image" v-on:click="loadMovie(image)">
       <h3 v-for="name in allFetchMedia">{{name.media_name}}</h3>
       </div>
    </article>
    <section class="lightbox" :class="{'show-movie' : showDetails }">
    <h4>{{mediaDetails.media_name}}</h4>
     <h4>{{mediaDetails.media_video}}</h4>
-    <video autoplay :src="'media/' + mediaDetails.media_video" v-if="showDetails">></video>
+    <video autoplay :src="'media/' + mediaDetails.media_video" v-if="showDetails"></video>
    </section>
             
             </section>`,
@@ -55,10 +55,10 @@ export default {
       this.getAllMedia();
  
      },
-
+       //Hello Dil.. I made a lot of multible linking tables but i dont know how to utilized and I GOT SICK OF COding..
    methods:{
          getAllMedia(){
-             //the default is kid section...cartoon etc.....
+             //the default is kid section...cartoon etc.....so i made a table again
              if(localStorage.getItem("cachedMedia")){
                  this.allFetchMedia = JSON(localStorage.getItem("cachedMedia"));
                  this.mediaDetails = this.allFetchMedia[0];
@@ -100,7 +100,7 @@ export default {
      },
  
      loadMovie(lightbox){
-         
+         //DILLLLLLLLLLLLL sorry could you make a closelightbox....???
             this.showDetails = true;
              this.mediaDetails = lightbox;
              
@@ -111,4 +111,4 @@ export default {
  
  
      }
-     
+   

@@ -54,7 +54,8 @@ export default{
         },
 
         logoutHere(){
-            
+            //Hey Dilllll i just wanna test out login but seems to not work. 
+            // we dont have log out icon. So i put menu svg in here sorry about that
             this.logined = false; //logined false doesnt work..
             localStorage.removeItem('cachedUser');
             debugger;
