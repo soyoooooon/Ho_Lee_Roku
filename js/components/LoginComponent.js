@@ -43,6 +43,7 @@ export default{
                                 console.warn(data);
                                 // just for testing
                                 alert("Are you sure? please try again");
+                                // this.$router.replace({path:"*"});
                             } else {
 
                                 
