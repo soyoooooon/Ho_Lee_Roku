@@ -1,5 +1,6 @@
 <?php
     require_once 'load.php';
+    
 
     $media_table = 'tbl_media';
     $getMedia = getAll($media_table);

@@ -4,27 +4,33 @@
     background-color: $dark;
     z-index: 2;
 
-    .watching{
-        border-bottom: solid 1px $cream;
-        padding: 40px 0 5px;
-        margin: 0 auto;
-        width: 80vw;
+    header {
+        width: 100%;
+        height: 65px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        background-color: $white;
+        
+        #logo{
+            flex: 1;
+            margin: 20px;
+           
+        }
+    }
 
         h2{
         font-family: $font;
-        font-size: 1em;
+        font-size: 2.5em;
         color: white;
+        margin-left: 30vw;
+        padding-top: 140px;
         }
 
-        img{
-            width: 20px;
-            height: 20px;
-        }
+        // img{
+        //     width: 20px;
+        //     height: 20px;
+        // }
     }
-}
+
 
 .userList {
     display: flex;
@@ -51,7 +57,11 @@
                 height: 120%;
                 width: auto;
             }
+            img:hover{
+                cursor: pointer;
+                }
         }
+       
 
         p {
             color: $white;
