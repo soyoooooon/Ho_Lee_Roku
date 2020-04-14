@@ -49,7 +49,7 @@ const vm = new Vue({
       if (localStorage.getItem('cachedUser')){
         let user = JSON.parse(localStorage.getItem('cachedUser'));
         this.logined = true;
-
+          //if you dont like it get rid of this... i dont like a computer remebers my info lol
         this.$router.push({ path: "/home", params:{currentuser: user}}); 
       }
 
