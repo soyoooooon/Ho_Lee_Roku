@@ -13,7 +13,7 @@ export default {
     data() {
         return{
          userList: [],
-        currentuser: ""
+        currentuser: {}
     }
     },
 
@@ -24,13 +24,14 @@ export default {
 
     },
 
-    methods: {
+    methods:{
         
 
 
         userSelected() {
             // console.log(this.liveuser.username);
             localStorage.setItem('cachedUser', JSON.stringify(this.liveuser));
+            //get a navDuplicated error..
 
             if (this.liveuser.admin === "1") {
             this.$router.push({ path: "/main", params:{currentuser: this.liveuser }}).catch((err)=>console.error(err));
@@ -40,7 +41,7 @@ export default {
             
             }else{
                 
-                this.$router.push({ path: "/kid", params:{currentuser: this.liveuser }});
+                this.$router.push({ path: "/kid", params:{currentuser :  this.liveuser}});
             }
         }
     }  

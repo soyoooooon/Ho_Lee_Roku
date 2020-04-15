@@ -1,4 +1,5 @@
 import getUserComponent from './getUserComponent.js';
+// import dashBoardComponent from './dashBoardComponent.js';
 
 
 export default{
@@ -9,8 +10,8 @@ export default{
             <div id="logo">
                 <img src="images/logo_white.svg" alt="">
             </div>
-            <!--<div class="logout-btn">
-            <img src="images/menu.svg" alt="" @click.prevent="logoutHere()"></div>-->
+            <div class="logout-btn">
+            <img src="images/logout.svg" alt="" @click="logoutHere()"></div>
         </header>
         <div class="watching-wrap">
             <div class="watching">
@@ -60,7 +61,7 @@ export default{
             // we dont have log out icon. So i put menu svg in here sorry about that
             this.logined = false; //logined false doesnt work..
             localStorage.removeItem('cachedUser');
-            debugger;
+            // debugger;
             this.$router.push({ path: "/"}); 
 
         }

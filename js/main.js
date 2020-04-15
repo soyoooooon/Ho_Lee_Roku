@@ -12,8 +12,8 @@ import kidComponent from "./components/kidComponent.js";
 
     routes:[
       {path: '/', component: LoginComponent},
-      {path: '/home', component: homeComponent},
-      {path: '/main', component: dashBoardComponent, name:'main'},
+      {path: '/home', component: homeComponent, props: true},
+      {path: '/main', component: dashBoardComponent, name:'main', props: true},
       {path: '/kid', component: kidComponent},
 
       // {path: '*', component: errorComponent}
@@ -53,6 +53,8 @@ const vm = new Vue({
         this.logined = true;
           //if you dont like it get rid of this... i dont like a computer remebers my info lol
         this.$router.push({ path: "/home", params:{currentuser: user}}); 
+
+        
       }
 
     },

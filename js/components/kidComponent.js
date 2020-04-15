@@ -7,7 +7,7 @@ export default {
     <section id="kid" 
     :class="{ 'defaultBg': isDefault, 'movieBg': isMovie, 'tvBg': isTv, 'musicBg': isMusic}">
     <header>
-        <div id="logo">
+        <div id="logo" v-on:click="getHome()">
             <img src="images/logo_white.svg" alt="">
         </div>
         <div class="imageWrap">
@@ -48,7 +48,7 @@ export default {
     <div :class="{ 'show-movie': showDetails, 'hide-lb': hideLightBox }">
         <p @click.prevent="close">Back</p>
         <h4>{{mediaDetails.media_name}}</h4>
-        <video controls :src="'media/' + mediaDetails.media_video" v-if="showDetails">></video>
+        <video controls :src="'media/' + mediaDetails.media_video" v-if="showDetails"></video>
     </div>
 
     </section>
@@ -58,7 +58,7 @@ export default {
         return {
             mediaDetails : {},
             allFetchMedia : [],
-            showDetails : true,
+            showDetails : false,
             hideLightBox : true,
             isDefault: true,
             isMovie: false,
@@ -121,10 +121,12 @@ export default {
             // fixedddd ittt yayyy
             this.hideLightBox = false;
             this.mediaDetails = lightbox;
+            this.showDetails = true;
         },
 
         close(){
             this.hideLightBox = true;
+            this.showDetails = false;
             this.mediaDetails = {}; // to stop video player after lightbox close
         },
 
@@ -147,6 +149,10 @@ export default {
             this.isMovie = false;
             this.isTv = false;
             this.isMusic = true;
+        },
+
+        getHome(){
+            this.$router.push({ path: "/home"}); 
         }
 
     },
