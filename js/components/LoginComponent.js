@@ -1,15 +1,21 @@
 export default{
-    template: `<section id="background">
-        <div id="vid"><video src="images/example-bg.mp4" type="video.mp4" autoplay muted loop>           
-        </video></div>
+    template: `
+    <section id="background">
+        <div id="vid">
+            <video src="images/example-bg.mp4" type="video.mp4" autoplay muted loop></video>
+        </div>
         <div id="transparent">
-        <div id="logo"><img src="images/logo_white.svg"></div>
-        <form id="login-form"> 
-        <input v-model="input.username" type="text" name="user" required placeholder="Username">
-        <input v-model="input.password" type="password" name="password" required placeholder="Password">
-        <button v-on:click.prevent="login()" type="submit" value="Log In">Log In</button>
-        </form></div>
-        </section>`,
+            <div id="logo">
+                <img src="images/logo_white.svg">
+            </div>
+            <form id="login-form"> 
+                <input v-model="input.username" type="text" name="user" required placeholder="Username">
+                <input v-model="input.password" type="password" name="password" required placeholder="Password">
+                <button v-on:click.prevent="login()" type="submit" value="Log In">Log In</button>
+            </form>
+        </div>
+    </section>
+    `,
 
         data: function(){
             return{

@@ -4,7 +4,6 @@ export default {
     template: `
     <div class="getUser">
         <div class="imageWrap">
-            
             <img :src="'images/' + liveuser.avatar" @click.prevent="userSelected()">
         </div>
         <p>{{ liveuser.username }}</p>
@@ -44,8 +43,5 @@ export default {
                 this.$router.push({ path: "/kid", params:{currentuser: this.liveuser }});
             }
         }
-    }
-
-
-    
+    }  
 }
