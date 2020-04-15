@@ -12,7 +12,7 @@ class Database
     private $username = "root";
 
     // root for mac
-    private $password = "";
+    private $password = "root";
 
     private static $instance = null;
     public $conn;

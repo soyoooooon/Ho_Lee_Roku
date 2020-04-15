@@ -6,10 +6,11 @@ export default {
     template:`
     <section id="dashboard">
     <header>
-        <div id="logo">
+        <div id="logo" v-on:click="getHome()">
             <img src="images/logo_white.svg" alt="logo">
         </div>
-        <div class="imageWrap">
+        
+        </div>
         </div>
         <div id="edit"><img src="images/heart_fill.svg" alt=""></div>
     </header>
@@ -39,9 +40,9 @@ export default {
     </article>
 
     <div :class="{ 'show-movie': showDetails, 'hide-lb': hideLightBox }">
-        <p @click.prevent="close">Back</p>
+        <p @click.prevent="close" @keydown.27="close">Back</p>
         <h4>{{mediaDetails.media_name}}</h4>
-        <video controls :src="'media/' + mediaDetails.media_video" v-if="showDetails">></video>
+        <video controls :src="'media/' + mediaDetails.media_video" v-if="showDetails"></video>
     </div>
 
     </section>
@@ -49,9 +50,10 @@ export default {
 
  data() {
        return {
+        nowuser:"",
         mediaDetails : {},
         allFetchMedia : [],
-        showDetails : true,
+        showDetails : false,
         hideLightBox : true
        } 
 
@@ -61,6 +63,7 @@ export default {
      this.getAllMedia();
 
     },
+
 
     methods:{
         getAllMedia(){
@@ -106,15 +109,22 @@ export default {
     },
 
     loadMovie(lightbox){
-        // fixedddd ittt yayyy
         this.hideLightBox = false;
         this.mediaDetails = lightbox;
+        this.showDetails= true;
     },
 
     close(){
         this.hideLightBox = true;
+        this.showDetails = false;
         this.mediaDetails = {}; // to stop video player after lightbox close
+        
     },
+    
+    getHome(){
+        this.$router.push({ path: "/home"}); 
+    }
+
 
     },
     
