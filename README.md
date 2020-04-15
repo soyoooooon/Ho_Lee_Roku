@@ -1,8 +1,9 @@
+<img src="images/logo_black.svg" width="300">
+
 # Roku Flashback
 
-
 ## Summary
-### Building a video/audio app, using queries and datbase 
+### Building a video/audio app, using queries and database 
 * Using prototyping tool for providing a design
 * Frame work with Vue.js
 
@@ -22,9 +23,10 @@
 * Adobe Illustrator
 * Adobe Photoshop
 
-## Google Document
+## Reference Docs
 * [Dev Doc](https://docs.google.com/document/d/17EWQWVDNswf-EGNF5NL3AXqPF4pXvoJWidB756JZ_Lg/edit?usp=sharing)
 * [Design Doc](https://docs.google.com/document/d/1PjrPWrOVxEbuCM5r5_tHPJv0xqfAqiiynGUGX9fE2IQ/edit?usp=sharing)
+* [Prototype](https://xd.adobe.com/view/b144b4d5-ab66-4fe9-7529-18a5719f73b6-c775/)
 
 ## Authors
 * Designer: Daffodil Ho
