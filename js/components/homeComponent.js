@@ -7,7 +7,7 @@ export default{
     <section id="select-bg" :class="{ hidden: isHidden }">
         <header>
             <div id="logo">
-                <img src="images/logo_black.svg" alt="">
+                <img src="images/logo_white.svg" alt="">
             </div>
             <!--<div class="logout-btn">
             <img src="images/menu.svg" alt="" @click.prevent="logoutHere()"></div>-->

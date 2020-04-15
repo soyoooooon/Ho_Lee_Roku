@@ -3,18 +3,22 @@ header {
     height: 64px;
     display: flex;
     justify-content: space-between;
-    background-color: $white;
+    // background-color: $dark;
     
-    #logo, #menu {
+    #logo, #menu, #edit {
         flex: 1;
         margin: 20px;
 
         img { height: 100%;}
     }
 
-    // #menu {
-    //     text-align: right;
-    // }
+    #menu {
+        text-align: right;
+    }
+
+    #edit {
+        text-align: right;
+    }
 }
 
 @media screen and (min-width : 768px) {
@@ -23,7 +27,7 @@ header {
         
         #logo, #menu {
             flex: 1;
-            margin: 30px;
+            margin: 30px 50px;
     
             img { height: 100%;}
         }

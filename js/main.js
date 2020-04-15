@@ -3,19 +3,18 @@ import LoginComponent from "./components/LoginComponent.js";
 import homeComponent from "./components/homeComponent.js";
 import dashBoardComponent from "./components/dashBoardComponent.js"
 import kidComponent from "./components/kidComponent.js";
-// import DetailsComponent from "./components/DetailsComponent.js";
 // import errorComponent from "./components/errorComponent.js";
 
 
 (() => {
  const router = new VueRouter({
     // mode: 'history', //delete#
+
     routes:[
       {path: '/', component: LoginComponent},
       {path: '/home', component: homeComponent},
       {path: '/main', component: dashBoardComponent, name:'main'},
       {path: '/kid', component: kidComponent},
-      // {path: '/details', component: DetailsComponent},
 
       // {path: '*', component: errorComponent}
     ]

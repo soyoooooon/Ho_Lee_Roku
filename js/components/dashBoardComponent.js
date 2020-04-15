@@ -3,10 +3,11 @@ import GetMediaComponent from './GetMediaComponent.js';
 export default {
     props: ['currentuser'],
  
-    template:`<section id="dashboard">
+    template:`
+    <section id="dashboard">
     <header>
         <div id="logo">
-            <img src="images/logo_black.svg" alt="">
+            <img src="images/logo_white.svg" alt="logo">
         </div>
         <div class="imageWrap">
         </div>
@@ -17,34 +18,41 @@ export default {
         <h2>Welcome user! What shall we watch today?</h2>
     </div>
 
-    <div class="filter-type">
-    <a href="Movies" @click.prevent="filterMediaType('Movies')">Movies</a>
-    <a href="TVShows" @click.prevent="filterMediaType('TVShows')">TV Shows</a>
-    <a href="Music" @click.prevent="filterMediaType('Music')">Music</a>
-    </div>
+    <div class="filter">
+        <div class="filter-type">
+        <a href="Movies" @click.prevent="filterMediaType('Movies')">Movies</a>
+        <a href="TVShows" @click.prevent="filterMediaType('TVShows')">TV Shows</a>
+        <a href="Music" @click.prevent="filterMediaType('Music')">Music</a>
+        </div>
 
-    <div class="filter-Era">
-    <a href="1950" @click.prevent="filterMedia('1950')">1950's</a>
-    <a href="1960" @click.prevent="filterMedia('1960')">1960's</a>
-    <a href="1970" @click.prevent="filterMedia('1970')">1970's</a>
-    <a href="1980" @click.prevent="filterMedia('1980')">1980's</a>
-    <a href="1990" @click.prevent="filterMedia('1990')">1990's</a>
+        <div class="filter-Era">
+        <a href="1950" @click.prevent="filterMedia('1950')">1950's</a>
+        <a href="1960" @click.prevent="filterMedia('1960')">1960's</a>
+        <a href="1970" @click.prevent="filterMedia('1970')">1970's</a>
+        <a href="1980" @click.prevent="filterMedia('1980')">1980's</a>
+        <a href="1990" @click.prevent="filterMedia('1990')">1990's</a>
+        </div>
     </div>
 
     <article id="all-media">
-        <media v-for="(media, index) in allFetchMedia" :mediaitem="media" :key="index"></media>
+        <media v-for="(media, index) in allFetchMedia" :mediaitem="media" @clicked="loadMovie" :key="index"></media>
     </article>
+
+    <div :class="{ 'show-movie': showDetails, 'hide-lb': hideLightBox }">
+        <p @click.prevent="close">Back</p>
+        <h4>{{mediaDetails.media_name}}</h4>
+        <video controls :src="'media/' + mediaDetails.media_video" v-if="showDetails">></video>
+    </div>
 
     </section>
    `,
 
  data() {
-       return{
-       
+       return {
         mediaDetails : {},
         allFetchMedia : [],
-        showDetails : false
-        
+        showDetails : true,
+        hideLightBox : true
        } 
 
     },
@@ -98,10 +106,15 @@ export default {
     },
 
     loadMovie(lightbox){
-         //DILLLLLLLLLLLLL sorry could you make a closelightbox....???
-        this.showDetails = true;
+        // fixedddd ittt yayyy
+        this.hideLightBox = false;
         this.mediaDetails = lightbox;
-    }
+    },
+
+    close(){
+        this.hideLightBox = true;
+        this.mediaDetails = {}; // to stop video player after lightbox close
+    },
 
     },
     

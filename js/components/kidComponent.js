@@ -1,63 +1,81 @@
+import GetMediaComponent from './GetMediaComponent.js';
+
 export default {
-   props: ['currentuser'], //curentuser is not working...
+    props: ['currentuser'], //curentuser is not working...
  
-    template:`<section id="select-bg">
+    template:`
+    <section id="kid" 
+    :class="{ 'defaultBg': isDefault, 'movieBg': isMovie, 'tvBg': isTv, 'musicBg': isMusic}">
     <header>
         <div id="logo">
-            <img src="images/logo_black.svg" alt="">
-            </div>
-            <div class="imageWrap">
-          
-            </div>
-      </header>
-      <div class="filter-Era">
-   <a href="1950" @click.prevent="filterMedia('1950')">1950's</a>
-    <a href="1960" @click.prevent="filterMedia('1960')">1960's</a>
-    <a href="1970" @click.prevent="filterMedia('1970')">1970's</a>
-    <a href="1980" @click.prevent="filterMedia('1980')">1980's</a>
-    <a href="1990" @click.prevent="filterMedia('1990')">1990's</a></div>
-
-    <div class="filter-type">
-    <a href="Movies" @click.prevent="filterMediaType('Movies')">Movies</a>
-    <a href="TVShows" @click.prevent="filterMediaType('TVShows')">TV Shows</a>
-    <a href="Music" @click.prevent="filterMediaType('Music')">Music</a>
+            <img src="images/logo_white.svg" alt="">
+        </div>
+        <div class="imageWrap">
+        </div>
+        <div id="edit"><img src="images/heart_fill.svg" alt=""></div>
+    </header>
+    
+    <div id="welcome">
+        <h2>Welcome user! What shall we watch today?</h2>
     </div>
 
-            <article id="all-media">
-            <div class="each-media">
-   
-      <img v-for="image in allFetchMedia" :src="'images/' + image.media_image" v-on:click="loadMovie(image)">
-      <h3 v-for="name in allFetchMedia">{{name.media_name}}</h3>
-      </div>
-   </article>
-   <section class="lightbox" :class="{'show-movie' : showDetails }">
-   <h4>{{mediaDetails.media_name}}</h4>
-    <h4>{{mediaDetails.media_video}}</h4>
-    <video autoplay :src="'media/' + mediaDetails.media_video" v-if="showDetails"></video>
-   </section>
-            
-            </section>`,
+    <div class="filter">
+        <div class="filter-type">
+        <a id="movie-kid" href="Movies" @click.prevent="filterMediaType('Movies'); changeMovieBg();">
+            <img src="./images/movie.svg" alt="movie"><br>Movies
+        </a>
+        <a id="tv-kid" href="TVShows" @click.prevent="filterMediaType('TVShows'); changeTvBg();">
+            <img src="./images/tv_show.svg" alt="tv"><br>TV Shows
+        </a>
+        <a id="music-kid" href="Music" @click.prevent="filterMediaType('Music'); changeMusicBg();">
+            <img src="./images/music.svg" alt="music"><br>Music
+        </a>
+        </div>
 
+        <!--<div class="filter-Era">
+        <a href="1950" @click.prevent="filterMedia('1950')">1950's</a>
+        <a href="1960" @click.prevent="filterMedia('1960')">1960's</a>
+        <a href="1970" @click.prevent="filterMedia('1970')">1970's</a>
+        <a href="1980" @click.prevent="filterMedia('1980')">1980's</a>
+        <a href="1990" @click.prevent="filterMedia('1990')">1990's</a>
+        </div>-->
+    </div>
 
-    
+    <article id="all-media">
+        <media v-for="(media, index) in allFetchMedia" :mediaitem="media" @clicked="loadMovie" :key="index"></media>
+    </article>
 
- data() {
-   return{
-       
-      mediaDetails : {},
-      allFetchMedia : [],
-      showDetails : false
-     } 
+    <div :class="{ 'show-movie': showDetails, 'hide-lb': hideLightBox }">
+        <p @click.prevent="close">Back</p>
+        <h4>{{mediaDetails.media_name}}</h4>
+        <video controls :src="'media/' + mediaDetails.media_video" v-if="showDetails">></video>
+    </div>
 
+    </section>
+    `,
+
+    data() {
+        return {
+            mediaDetails : {},
+            allFetchMedia : [],
+            showDetails : true,
+            hideLightBox : true,
+            isDefault: true,
+            isMovie: false,
+            isTv: false,
+            isMusic: false
+        } 
     },
 
-   created: function(){
+    created: function(){
       this.getAllMedia();
  
-     },
+    },
        //Hello Dil.. I made a lot of multible linking tables but i dont know how to utilized and I GOT SICK OF COding..
-   methods:{
-         getAllMedia(){
+        // Hello Yoon.. I'm also REALLY SICK OF CODING HAHA
+
+    methods:{
+        getAllMedia(){
              //the default is kid section...cartoon etc.....so i made a table again
              if(localStorage.getItem("cachedMedia")){
                  this.allFetchMedia = JSON(localStorage.getItem("cachedMedia"));
@@ -74,41 +92,68 @@ export default {
                  this.mediaDetails = data[0];
              })
             }
-         },
+        },
       
-      filterMedia(filter){
-         //debugger;
-         let url=`./admin/index.php?media=media&filter=${filter}`;
-         fetch(url)
-         .then(res =>res.json())
-         .then(data => {
-             this.allFetchMedia = data;
-             this.mediaDetails = data[0];
-         })
+        filterMedia(filter){
+            //debugger;
+            let url=`./admin/index.php?media=media&filter=${filter}`;
+            fetch(url)
+            .then(res =>res.json())
+            .then(data => {
+                this.allFetchMedia = data;
+                this.mediaDetails = data[0];
+            })
+    
+        },
  
-     },
+        filterMediaType(filter){
+    
+            let url=`./admin/index.php?media=media&filtertype=${filter}`;
+            fetch(url)
+            .then(res =>res.json())
+            .then(data => {
+                this.allFetchMedia = data;
+                this.mediaDetails = data[0];
+            }) 
+        },
  
-     filterMediaType(filter){
- 
-         let url=`./admin/index.php?media=media&filtertype=${filter}`;
-         fetch(url)
-         .then(res =>res.json())
-         .then(data => {
-             this.allFetchMedia = data;
-             this.mediaDetails = data[0];
-         }) 
-     },
- 
-     loadMovie(lightbox){
-         //DILLLLLLLLLLLLL sorry could you make a closelightbox....???
-            this.showDetails = true;
-             this.mediaDetails = lightbox;
-             
-     }
- 
-     }
-     
- 
- 
-     }
+        loadMovie(lightbox){
+            // fixedddd ittt yayyy
+            this.hideLightBox = false;
+            this.mediaDetails = lightbox;
+        },
+
+        close(){
+            this.hideLightBox = true;
+            this.mediaDetails = {}; // to stop video player after lightbox close
+        },
+
+        changeMovieBg(){
+            this.isDefault = false,
+            this.isMovie = true;
+            this.isTv = false;
+            this.isMusic = false;
+        },
+
+        changeTvBg(){
+            this.isDefault = false,
+            this.isMovie = false;
+            this.isTv = true;
+            this.isMusic = false;
+        },
+
+        changeMusicBg(){
+            this.isDefault = false,
+            this.isMovie = false;
+            this.isTv = false;
+            this.isMusic = true;
+        }
+
+    },
+    
+    components: {
+        media : GetMediaComponent
+    }
+
+}
    
